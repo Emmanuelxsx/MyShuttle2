@@ -10,13 +10,13 @@ pipeline {
               script {
                   gv = load "script.groovy"
               }
-                echo 'Building..'
- 
             }
         }
         stage('Build') {
             steps {
-                echo 'Building..'
+                script {
+                    gv.buildApp()
+                }
  
             }
         }
