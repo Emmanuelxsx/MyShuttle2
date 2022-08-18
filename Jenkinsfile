@@ -5,11 +5,17 @@ pipeline {
     booleanParam(name: 'executeTests', defaultValue: true, description: '')
     }
     stages {
-        stage('Build') {
+        stage('init') {
             steps {
               script {
-                
+                  gv = load "script.groovy"
               }
+                echo 'Building..'
+ 
+            }
+        }
+        stage('Build') {
+            steps {
                 echo 'Building..'
  
             }
